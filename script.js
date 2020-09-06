@@ -16,7 +16,7 @@ function spy() {
     document.getElementById("floaty").setAttribute("href", "#4");
     fl.style.transform = "";
   } else if (scrollPercentage === 1) {
-    fl.style.transform = "rotateX(180deg)"
+    fl.style.transform = "rotateX(180deg)";
     document.getElementById("floaty").setAttribute("href", "#1");
   }
 }
