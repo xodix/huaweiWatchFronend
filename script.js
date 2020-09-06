@@ -1,4 +1,4 @@
-document.addEventListener("scroll", spy);
+window.onload = () => document.getElementById('floaty').addEventListener("click", spy);
 
 function spy() {
   const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -6,17 +6,16 @@ function spy() {
   const fl = document.getElementById("floaty");
   // Add thresholds
   const scrollPercentage = winScroll / height;
+  const smooth = {behavior: 'smooth'};
   if (scrollPercentage < 0.35) {
-    document.getElementById("floaty").setAttribute("href", "#2");
-    fl.style.transform = "";
+    document.getElementById("2").scrollIntoView(smooth);
   } else if (scrollPercentage < 0.67) {
-    document.getElementById("floaty").setAttribute("href", "#3");
-    fl.style.transform = "";
+    document.getElementById("3").scrollIntoView(smooth);
   } else if (scrollPercentage < 1) {
-    document.getElementById("floaty").setAttribute("href", "#4");
-    fl.style.transform = "";
+    fl.style.transform = "rotateZ(180deg)"
+    document.getElementById("4").scrollIntoView(smooth);
   } else if (scrollPercentage === 1) {
-    fl.style.transform = "rotateX(180deg)";
-    document.getElementById("floaty").setAttribute("href", "#1");
+    fl.style.transform = "rotateZ(0deg)"
+    document.getElementById("1").scrollIntoView(smooth);
   }
 }
